@@ -1,0 +1,26 @@
+@import "./../styles/variables.scss";
+
+// General
+
+h1 {
+  font-size: 72px;
+  color: #eaeaea;
+  font-family: $primaryFont;
+  width: 55%;
+}
+
+// contact
+
+input,
+textarea {
+  display: block;
+  border-radius: 6px;
+  border: solid 1px #979797;
+  background-color: #2b2b2b;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+}

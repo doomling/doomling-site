@@ -1,0 +1,34 @@
+@import "./../../styles/variables.scss";
+
+.sectionContainer {
+  height: calc(100vh - $navheight - $navpad);
+  width: 100vw;
+  padding: 0 50px;
+  font-family: $primaryFont;
+  font-size: 24px;
+  color: #eaeaea;
+  font-weight: 300;
+}
+
+.sectionTitle {
+  position: relative;
+  margin-bottom: 30px;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60%;
+    border-top: 1px solid #eaeaea;
+    transition: width 350ms ease;
+  }
+
+  &:hover::after {
+    width: 0;
+    right: 0;
+    left: auto;
+    border-top: 1px solid #00ebc7;
+  }
+}

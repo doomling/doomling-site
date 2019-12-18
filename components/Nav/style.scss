@@ -1,0 +1,13 @@
+@import "./../../styles/variables.scss";
+
+nav {
+  padding: $navpad;
+
+  .logo {
+    transition: transform 350ms ease;
+
+    &:hover {
+      transform: rotate(7deg);
+    }
+  }
+}

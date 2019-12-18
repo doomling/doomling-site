@@ -1,0 +1,13 @@
+@mixin multiEllipsis($lines-to-show) {
+  // -webkit-line-clamp: $lines-to-show;
+  // -webkit-box-orient: vertical;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  // height: 1.4 * $lines-to-show;
+  // display: block;
+  // display: -webkit-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  height: 50px;
+}

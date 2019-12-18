@@ -1,0 +1,31 @@
+// colors
+$brandPink: #a3195b;
+$shadow: #620f37;
+$greyjoy: #e6e6e6;
+$brightOrange: #f39200;
+$brightBlue: #2d87c0;
+
+$spacegray: #2b2b2b;
+
+// new colors
+
+$turquoise: #93f3e1;
+$traful: #3f19f9;
+$darkBlue: #322b80;
+$grayShadow: #dff5f1;
+$active: #7a4d8e;
+$toby: #f0d262;
+$lilacShadow: #bfb3f9;
+
+// font
+
+@font-face {
+  font-family: "Exo 2", sans-serif;
+  src: url("https://fonts.googleapis.com/css?family=Exo+2:300,400,700&display=swap");
+}
+
+$primaryFont: "Exo 2", sans-serif;
+
+// other
+$navheight: 40px;
+$navpad: 50px;

@@ -1,0 +1,15 @@
+version: "2.1"
+
+services:
+  courseit:
+    container_name: sanluis
+    image: sanluis
+    restart: always
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    logging:
+      options:
+        max-size: 50m
