@@ -24,3 +24,11 @@ textarea {
 input {
   padding: 10px;
 }
+
+
+// portfolio
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
