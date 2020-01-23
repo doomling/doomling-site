@@ -1,8 +1,19 @@
 @import "./../../styles/variables.scss";
 
+$width: 30%;
+
 .caseContainer {
   margin: 0 20px 20px 0;
-  background: peru;
-  width: 300px;
-  height: 150px;
+  min-width: 300px;
+  flex: 1;
+  height: 20vh;
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 20px;
+  box-sizing: border-box;
+
+  &:hover {
+    border: 1px solid #00ebc7;
+    padding: 20px 30px;
+  }
 }
