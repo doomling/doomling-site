@@ -16,6 +16,7 @@ nav {
 
   .linksContainer {
     display: flex;
+    color: red;
     li {
       list-style: none;
       margin: 0 20px;
@@ -23,7 +24,8 @@ nav {
       color: $grayShadow;
       position: relative;
 
-      a, a:visited {
+      a,
+      a:visited {
         color: $grayShadow;
         text-decoration: none;
       }
@@ -37,7 +39,7 @@ nav {
         border-top: 1px solid #eaeaea;
         transition: width 350ms ease;
       }
-    
+
       &:hover::after {
         width: 0;
         right: 0;
@@ -45,5 +47,90 @@ nav {
         border-top: 1px solid #00ebc7;
       }
     }
+  }
+}
+
+@mixin circle($h, $w) {
+  height: $h;
+  width: $w;
+  border-radius: 50%;
+}
+
+@mixin hole($b: $bg-color) {
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: $b;
+}
+
+@mixin blob($t, $l) {
+  position: absolute;
+  top: $t;
+  left: $l;
+  @include circle(20px, 20px);
+
+  &::after {
+    content: "";
+    @include circle(10px, 10px);
+    @include hole();
+    width: 16px;
+    height: 16px;
+    left: 10px;
+    top: 2px;
+  }
+}
+
+.liquidContainer {
+  width: 50px;
+  height: 50px;
+  position: relative;
+
+  .circle {
+    position: absolute;
+    bottom: 9px;
+    left: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    @include circle(20px, 25px);
+    transform: rotate(38deg);
+
+    &::after {
+      $border-width: 10px;
+      content: "";
+      position: absolute;
+      border-radius: 10px 0.5em 20px 52px;
+      width: 29px;
+      height: 29px;
+      opacity: 0.9;
+      background: linear-gradient(to bottom, #36d8c5 0%, #6319a0 100%);
+      animation: drift 3000ms infinite cubic-bezier(0.5, 0.7, 0.7, 0.5);
+    }
+  }
+}
+
+.liquidTop {
+  width: 27px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 5px;
+  z-index: 10;
+  opacity: 1;
+  transform: rotate(30deg);
+  background: linear-gradient(
+    to bottom,
+    rgba(54, 216, 197, 0) 0%,
+    rgba(54, 216, 197, 0) 40%,
+    rgba(99, 25, 160, 0.8) 100%
+  );
+  animation: wobble 4s infinite alternate-reverse;
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(-360deg);
   }
 }

@@ -1,0 +1,446 @@
+.container {
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  animation: move 2s alternate-reverse infinite;
+  display: none;
+}
+
+@keyframes move {
+  from {
+    top: 0;
+  }
+  to {
+    top: 20px;
+  }
+}
+
+.head {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+  top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.ear {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 70px solid #000;
+  border-radius: 0 50px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.earRight {
+  @extend .ear;
+  position: absolute;
+  top: 15px;
+  left: 55px;
+}
+
+.earLeft {
+  @extend .ear;
+  position: absolute;
+  top: 15px;
+  right: 55px;
+  transform: rotateX(180deg);
+}
+
+.innerEarLeft {
+  position: absolute;
+  background: linear-gradient(
+    45deg,
+    rgba(35, 236, 255, 1) 0%,
+    rgba(254, 255, 255, 0) 99%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  margin-top: 5px;
+  width: 40px;
+  height: 60px;
+  border-radius: 50%;
+  transform: rotateX(180deg);
+}
+
+.innerEarRight {
+  position: absolute;
+  background: linear-gradient(
+    45deg,
+    rgba(254, 255, 255, 0) 1%,
+    rgba(35, 236, 255, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  margin-top: 5px;
+  width: 40px;
+  height: 60px;
+  border-radius: 50%;
+  transform: rotateX(180deg);
+}
+
+.eye {
+  width: 15px;
+  height: 25px;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 10px solid #42dff4;
+  border-left: 0;
+  box-sizing: border-box;
+  background-color: #42dff4;
+  z-index: 1;
+  transform: rotate(90deg);
+}
+
+.eyeRight {
+  @extend .eye;
+  position: absolute;
+  top: 50px;
+  left: 15px;
+}
+
+.eyeLeft {
+  @extend .eye;
+  position: absolute;
+  top: 50px;
+  right: 15px;
+}
+
+.eyeLight {
+  background-color: #000;
+  width: 10px;
+  height: 3px;
+  border-radius: 50%;
+}
+
+.nose {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #42dff4;
+  margin-top: 23px;
+}
+
+.mouth {
+  width: 10px;
+  height: 20px;
+  background-color: #e52488;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  animation: laugh 0.2s alternate infinite;
+}
+
+@keyframes laugh {
+  from {
+    bottom: 16px;
+  }
+  to {
+    bottom: 18px;
+  }
+}
+
+.mouthTop {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.mouthShadow {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(119, 5, 64, 0.65) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.mouthTopRight {
+  position: absolute;
+  bottom: 30px;
+  right: 41px;
+  border-bottom: 1px solid #42dff4;
+}
+.mouthTopLeft {
+  position: absolute;
+  bottom: 30px;
+  left: 41px;
+  border-bottom: 1px solid #42dff4;
+}
+
+.headShadow {
+  width: 100px;
+  height: 100px;
+  z-index: 4;
+  position: absolute;
+  margin-top: 5px;
+  left: 70px;
+  border-bottom: 2px solid #42dff4;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(254, 255, 255, 0) 1%,
+    rgba(234, 213, 239, 0.2) 35%,
+    rgba(204, 157, 234, 0.5) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.body {
+  width: 60px;
+  margin: -10px auto 0;
+  top: 60px;
+  display: flex;
+  position: relative;
+  top: -10px;
+  z-index: 1;
+}
+
+.shoulder {
+  width: 50%;
+  height: 30px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.shoulderLeft {
+  @extend .shoulder;
+  position: absolute;
+  z-index: -1;
+  left: 5px;
+}
+
+.shoulderRight {
+  @extend .shoulder;
+  position: absolute;
+  z-index: -1;
+  right: 5px;
+}
+
+.bodyBase {
+  background-color: #000;
+  width: 60px;
+  height: 70px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  top: 10px;
+  border-bottom: 2px solid #42dff4;
+}
+
+.bodyShadow {
+  width: 60px;
+  height: 70px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  top: 115px;
+  left: 90px;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    rgba(35, 236, 255, 0.5) 0%,
+    rgba(254, 255, 255, 0) 99%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.leg {
+  background-color: #000;
+  border-bottom: 4px solid #42dff4;
+  width: 20px;
+  height: 50px;
+  border-right: 2px solid #42dff4;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.legLeft {
+  @extend .leg;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  z-index: -1;
+}
+
+.legRight {
+  @extend .leg;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  z-index: -1;
+}
+
+.arm {
+  background-color: #000;
+  width: 20px;
+  height: 50px;
+  border-bottom: 2px solid #000;
+  border-right: 5px solid #000;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.armLeft {
+  @extend .arm;
+  position: absolute;
+  left: -10px;
+  top: 15px;
+  transform: rotate(20deg);
+}
+
+.armRight {
+  @extend .arm;
+  position: absolute;
+  right: -10px;
+  top: 15px;
+  transform: rotate(-20deg);
+}
+
+.wingContainer {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 54px;
+  z-index: 0;
+}
+
+.wing {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(160, 216, 239, 1) 0%,
+    rgba(221, 241, 249, 1) 65%,
+    rgba(254, 255, 255, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  width: 60px;
+  height: 20px;
+}
+
+.wingLeft,
+.wingRight {
+  animation: flap 0.3s alternate infinite;
+}
+
+@keyframes flap {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(20deg);
+  }
+}
+
+.wingLeft1 {
+  @extend .wing;
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(15deg);
+  top: 50px;
+  left: 15px;
+}
+
+.wingLeft2 {
+  @extend .wing;
+  position: absolute;
+  border-radius: 50%;
+  top: 60px;
+  left: 20px;
+}
+
+.wingLeft3 {
+  @extend .wing;
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  top: 70px;
+  left: 20px;
+}
+
+.wingRight1 {
+  @extend .wing;
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  top: 50px;
+  right: 15px;
+}
+
+.wingRight2 {
+  @extend .wing;
+  position: absolute;
+  border-radius: 50%;
+  top: 60px;
+  right: 20px;
+}
+
+.wingRight3 {
+  @extend .wing;
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(15deg);
+  top: 70px;
+  right: 20px;
+}
+
+.tailContainer {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  transform: rotate(40deg);
+  z-index: 1;
+}
+
+.tail {
+  height: 80px;
+  width: 80px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 0;
+  border-bottom: 3px solid #000;
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+}
+
+.tailSmall {
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 0;
+  border-top: 2px solid #000;
+  position: absolute;
+  bottom: 40px;
+  left: -33px;
+  transform: rotate(-15deg);
+}
+
+.tailFluffContainer {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: -49px;
+  top: 32px;
+  animation: move-tail 0.8s alternate infinite;
+}
+
+@keyframes move-tail {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    display: block;
+  }
+}

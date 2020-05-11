@@ -1,0 +1,171 @@
+$bg-color: #2b2b2b;
+
+@mixin circle($h, $w) {
+  height: $h;
+  width: $w;
+  border-radius: 50%;
+}
+
+@mixin hole($b: $bg-color) {
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: $b;
+}
+
+@mixin blob($t, $l) {
+  position: absolute;
+  top: $t;
+  left: $l;
+  @include circle(20px, 20px);
+
+  &::after {
+    content: "";
+    @include circle(10px, 10px);
+    @include hole();
+    width: 16px;
+    height: 16px;
+    left: 10px;
+    top: 2px;
+  }
+}
+
+.container {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 100px;
+  transform: rotate(30deg);
+  .potion-top {
+    width: 35px;
+    height: 55px;
+    position: absolute;
+    top: -53px;
+    border-radius: 5px;
+    border: 5px solid #fff;
+    border-bottom-color: $bg-color;
+    background-color: $bg-color;
+    z-index: 3;
+    .potion-top-line {
+      position: absolute;
+      width: 10px;
+      top: 8px;
+      height: 3px;
+      right: 2px;
+      background-color: #fff;
+    }
+  }
+  .potionNeck {
+    width: 70px;
+    height: 20px;
+    position: absolute;
+    z-index: 4;
+    top: -20px;
+    border-radius: 5px;
+    border: 5px solid #fff;
+    background-color: $bg-color;
+  }
+  .potionBody {
+    $h: 200px;
+    $w: 200px;
+    @include circle($h, $w);
+    border: 8px solid #fff;
+    position: relative;
+    z-index: 2;
+    .potionContent {
+      $h: 180px;
+      $w: 180px;
+      @include circle($h, $w);
+      background-color: $bg-color;
+      position: relative;
+      z-index: 2;
+      top: 10px;
+      left: 9px;
+      overflow: hidden;
+      &::after {
+        $border-width: 10px;
+        content: "";
+        position: absolute;
+        border-radius: 0.5em 0.5em 5.563em 5.563em;
+        width: 270px;
+        height: 250px;
+        bottom: -120px;
+        left: -30px;
+        opacity: 0.7;
+        background: linear-gradient(to bottom, #36d8c5 0%, #6319a0 100%);
+        border-radius: 40%;
+        animation: drift 3000ms infinite cubic-bezier(0.5, 0.7, 0.7, 0.5);
+      }
+
+      .liquidTop {
+        background: red;
+        width: 100%;
+        height: 80px;
+        border-radius: 250%;
+        position: absolute;
+        top: 40px;
+        z-index: 10;
+        opacity: 1;
+        background: linear-gradient(
+          to bottom,
+          rgba(54, 216, 197, 0) 0%,
+          rgba(54, 216, 197, 0) 40%,
+          rgba(99, 25, 160, 0.8) 100%
+        );
+        animation: wobble 4s infinite alternate-reverse;
+      }
+
+      @keyframes bubble {
+        from {
+          transform: translateY(30px) scale(0.2);
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+          transform: translateY(-30px);
+        }
+      }
+      .blobContainer {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 40%;
+        z-index: 4;
+        left: 10%;
+        .blob-one {
+          @include blob(20px, 25px);
+          animation: bubble 1s infinite cubic-bezier(0.5, 0.7, 0.7, 0.5);
+        }
+        .blobTwo {
+          @include blob(30px, 0px);
+          animation: bubble 1.5s infinite cubic-bezier(0.5, 0.7, 0.7, 0.5);
+        }
+        .blobThree {
+          @include blob(50px, 20px);
+          animation: bubble 2.5s infinite cubic-bezier(0.5, 0.7, 0.7, 0.5);
+        }
+      }
+    }
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes wobble {
+  50% {
+    border-top-left-radius: 300px;
+    border-bottom-right-radius: 320px;
+  }
+  100% {
+    border-top-left-radius: 40px;
+  }
+}

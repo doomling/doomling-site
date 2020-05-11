@@ -1,13 +1,21 @@
 @import "./../../styles/variables.scss";
 
 .sectionContainer {
-  height: calc(100vh - $navheight - $navpad);
+  height: 100vh;
   width: calc(100vw - 100px);
   padding: 0 50px;
   font-family: $primaryFont;
   font-size: 24px;
   color: #eaeaea;
   font-weight: 300;
+  overflow: hidden;
+}
+
+.sectionContainerShiny {
+  @extend .sectionContainer;
+  background-color: #cc3399;
+  padding-top: 100px;
+  height: auto;
 }
 
 .sectionTitle {

@@ -4,7 +4,7 @@ import style from "./style.scss";
 class Section extends React.Component {
   render() {
     return (
-      <section className={style.sectionContainer}>
+      <section className={this.props.shiny ? style.sectionContainerShiny : style.sectionContainer}>
         <div>
           <span className={style.sectionTitle}>{this.props.title}</span>
         </div>
