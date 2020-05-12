@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=dev nodemon -w server.js server.js",
     "build": "next build",
-    "now-build": "next build",
+    "now-build": "next build & next export",
     "start": "NODE_ENV=production node server.js",
     "ci": "NODE_ENV=ci node server.js",
     "win": "node server.js"
