@@ -134,3 +134,9 @@ nav {
     transform: rotate(-360deg);
   }
 }
+
+@media only screen and (max-width: 768px) {
+  nav {
+    padding: 20px;
+  }
+}

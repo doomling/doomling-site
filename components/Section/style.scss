@@ -1,7 +1,7 @@
 @import "./../../styles/variables.scss";
 
 .sectionContainer {
-  height: calc(100vh - 150px);
+  min-height: calc(100vh - 150px);
   padding: 0 50px;
   font-family: $primaryFont;
   font-size: 24px;
@@ -48,5 +48,14 @@ h1 {
     right: 0;
     left: auto;
     border-top: 1px solid #00ebc7;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionContainer {
+    h1 {
+      margin-top: 30px;
+      width: auto;
+    }
   }
 }
