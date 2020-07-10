@@ -33,6 +33,7 @@ input {
   display: flex;
   flex: 1;
   justify-content: space-between;
+  max-width: 1000px;
 
   svg {
     margin: 0 10px;
@@ -61,7 +62,7 @@ a {
 .spikes {
   position: relative;
   background: #2b2b2b;
-  height: 50vh;
+  height: 20vh;
 }
 
 .spikes::after {

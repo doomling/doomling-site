@@ -1,16 +1,26 @@
 @import "./../../styles/variables.scss";
 
 .sectionContainer {
-  height: 100vh;
-  width: calc(100vw - 100px);
+  height: calc(100vh - 150px);
   padding: 0 50px;
   font-family: $primaryFont;
   font-size: 24px;
   color: #eaeaea;
   font-weight: 300;
   overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+
+  h1,
+  p {
+    max-width: 1000px;
+    bottom: 0;
+  }
 }
 
+h1 {
+  margin-top: 20vh;
+}
 .sectionContainerShiny {
   @extend .sectionContainer;
   background-color: #cc3399;

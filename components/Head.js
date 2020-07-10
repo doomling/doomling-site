@@ -9,6 +9,10 @@ export default (props) => (
     />
     <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    ></link>
     <script
       src="https://kit.fontawesome.com/b10872eea0.js"
       crossorigin="anonymous"
