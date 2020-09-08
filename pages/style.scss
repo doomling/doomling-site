@@ -3,10 +3,16 @@
 // General
 
 h1 {
-  font-size: 72px;
+  font-size: 36px;
   color: #eaeaea;
   font-family: $primaryFont;
   width: 55%;
+}
+
+h2 {
+  a {
+    color: #2b2b2b;
+  }
 }
 
 // contact

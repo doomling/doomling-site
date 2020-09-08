@@ -23,11 +23,21 @@ class Index extends React.Component {
         <Section title="Un poco sobre mi">
           <h1>¡Hola! Mi nombre es Bel Rey</h1>
           <p>
-            Soy desarrolladora frontend y diseñadora UI. Me gusta emprender,
-            solucionar problemas y contar historias. Actualmente trabajo en{" "}
+            Soy desarrolladora fullstack y diseñadora UI. Me gusta emprender,
+            solucionar problemas y contar historias. Actualmente formo parte de{" "}
             <a href="https://www.courseit.com.ar" target="_blank">
-              CourseIt.
+              CourseIt
+            </a>{" "}
+            la mejor opción para aprender desarrollo web en español.
+          </p>
+          <p>
+            En mi escaso tiempo libre hago{" "}
+            <a href="https://teloexplicocongatitos.com/" target="_blank">
+              #TeLoExplicoConGatitos
             </a>
+            , una serie de cheatsheets con conceptos complejos explicados de
+            forma simple para que cada vez más personas se animen a meterse en
+            el mundo de la tecnología.
           </p>
           <div className={style.social}>
             <span>Encontrame en:</span>
@@ -47,30 +57,39 @@ class Index extends React.Component {
               <a href="https://www.behance.net/belrey" target="_blank">
                 <FontAwesomeIcon icon={fab.faBehance} />
               </a>
+              <a
+                href="https://open.spotify.com/show/40vVHnRwYqihg2raORQuxU"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={fab.faSpotify} />
+              </a>
             </div>
           </div>
         </Section>
-        {/* <Section title="Algunas cosas que escribí">
-          <div className={style.grid}>
-            {[1, 2, 3, 4].map((item, i) => {
-              return <CaseStudy title={item} key={i} />;
-            })}
-          </div>
-        </Section> */}
+
         <section className={style.spikes}></section>
         <Section shiny={true} title="Un poco más sobre mi">
           <div className={style.flex}>
             <div>
               <h2>
-                También me gusta mucho animar personajes en CSS{" "}
-                <i class="fas fa-long-arrow-alt-right"></i>
+                También me gusta mucho animar personajes en CSS, tengo un{" "}
+                <a
+                  href="https://open.spotify.com/show/40vVHnRwYqihg2raORQuxU"
+                  target="_blank"
+                >
+                  podcast
+                </a>
+                , y a veces{" "}
+                <a href="https://dev.to/iamdoomling/" target="_blank">
+                  escribo
+                </a>
+                .<i class="fas fa-long-arrow-alt-right"></i>
                 <br />
                 <br />
-                ¿Puedo ayudarte con algún proyecto?
+                ¿Querés contactarme?
               </h2>
               <p>
-                Estoy tomando trabajos en modalidad freelance, si te interesa
-                contratar mis servicios contactame:
+                Podés hacerlo en mis redes o por mail:
                 <a href="mailto: belenrey@gmail.com">
                   <FontAwesomeIcon icon={faEnvelope} />
                 </a>

@@ -4,7 +4,7 @@
   min-height: calc(100vh - 150px);
   padding: 0 50px;
   font-family: $primaryFont;
-  font-size: 24px;
+  font-size: 18px;
   color: #eaeaea;
   font-weight: 300;
   overflow: hidden;
@@ -20,6 +20,9 @@
 
 h1 {
   margin-top: 20vh;
+  a {
+    color: #2b2b2b;
+  }
 }
 .sectionContainerShiny {
   @extend .sectionContainer;
